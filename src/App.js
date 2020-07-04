@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Button from './template/button';
+import Player from './template/player';
+import './App.scss';
 
 function App() {
+  const [ data, setData ] = useState(null);
+  console.log('Players ====>', data)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`app`}>
+      <Button getData={ setData } />
+      <div className={`table`}>
+      <div className={`table-title`}>Poker challenge</div>
+        {data && data.map((player, ind) => <Player name={player.name} cards={player.cards} isWinner={ player.isWinner } key={ ind } />)}
+      </div>
     </div>
   );
 }

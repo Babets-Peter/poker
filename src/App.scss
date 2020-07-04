@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app,
+.table {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.table {
+	padding: 15px;
+	width: 90%;
+	min-height: 300px;
+	position: relative;
+	border-radius: 10px;
+
+	&-title {
+		position: absolute;
+	  top: 5px;
+	  font-size: 22px;
+	}
+}
+
+.red {
+  color: #FF0000;
+}
+
+.black {
+  color: #000;
+}
+
+.shuffle-btn {
+	width: 250px;
+	height: 36px;
+	background: #70fab5;
+	border: none;
+	outline: none;
+	border-radius: 12px;
+	font-size: 18px;
+	color: #fff;
+	cursor: pointer;
+	box-shadow: 0 0 1px 1px inset #828282;
+	transition: .4s ease-in-out;
+	margin: 5px;
+
+	&:hover {
+		background: #fff;
+		color: #70fab5;
+		border: 1px solid #70fab5;
+		transform: scale(1.01);
+	}
+}
+
+.cards {
+	padding: 5px;
+	width: 405px;
+	height: 100px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+
+	&__card--info {
+		width: 75px;
+	  height: 90%;
+	  border-radius: 4px;
+	  position: relative;
+	  box-shadow: 0 0 1px 1px #ede7e6;
+	  margin-left: 5px;
+
+	  &__suit {
+		  width: 100%;
+		  display: block;
+		}
+
+		&__suit--top {
+		  text-align: left;
+		  padding-left: 7px;
+		}
+
+		&__suit--bottom {
+		  position: absolute;
+		  bottom: 0px;
+		  text-align: left;
+		  transform: rotate(180deg);
+		  right: 7px;
+		}
+
+		&__number {
+		  width: 100%;
+		  position: absolute;
+		  top: 38%;
+		  text-align: center;
+		}
+	}
+}
+
+.winner {
+	color: #00fa5c;
+
+	&-text {
+		color: #00fa5c;
+		font-size: 18px;
+	}
+}
+
+.winner .cards {
+	border: 2px solid  #00fa5c;
+}
+
+.player {
+	margin-top: 10px;
+
+	&-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
